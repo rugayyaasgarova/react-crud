@@ -1,0 +1,41 @@
+.product-details{
+    display: flex;
+  justify-content: center;  
+  align-items: center;      
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 3rem;
+  margin-top: 7%;
+
+}
+.product-details button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100px;
+  height: 30px;
+  margin-right: 50%;
+  margin-top: 30px;
+
+}
+
+.product-details h1{
+    width: 600px;
+}
+.product-details img{
+    width: 400px;
+}
+
+.product-details p{
+ margin-top: 20px   ;
+     width:  560px;
+
+}
+
+.product-details h4{
+    margin-right: 50%;
+    margin-top: 20px;
+}

@@ -1,0 +1,106 @@
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+    
+  }
+  
+  .card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+    align-items: center;
+  
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+  }
+  
+  .ProductImg {
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;  
+    object-position: center; 
+  }
+  
+  .card h3 {
+    font-size: 1.25rem;
+    margin: 15px;
+    color: #333;
+  }
+  
+  .card-description {
+    font-size: 0.95rem;
+    color: #666;
+    padding: 0 15px;
+    margin: 10px 0;
+    line-height: 1.5;
+    height: 80px; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+ 
+  }
+  
+  .card p {
+    font-size: 1rem;
+    margin: 10px 15px 20px;
+    font-weight: bold;
+    color: #444;
+  
+    &:last-child {
+      margin-bottom: 15px;
+    }
+  }
+
+  .card h3{
+    color: rgb(47, 47, 181);
+    text-decoration: underline;
+    text-decoration-color: #3498db; 
+    text-decoration-thickness: 2px;
+  }
+
+
+  .heartIcon {
+   margin-left: 80%;
+   border: none;
+   background-color: white;
+   margin-top: 20px;
+   
+  }
+
+  
+
+  @media only screen and (max-width: 320px) {
+    .header{
+      align-items: center;
+       display: flex;
+      flex-direction: column;
+      width: 200px;
+    }
+    .searchSort{
+      flex-direction: column;
+    }
+    
+  }
+  @media only screen and (max-width: 768px) {
+    .header{
+      align-items: center;
+       display: flex;
+      flex-direction: column;
+      width: 200px;
+    }
+    .searchSort{
+      flex-direction: column;
+    }
+    
+  }

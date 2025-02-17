@@ -1,0 +1,57 @@
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  th,
+  td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: rgb(179, 96, 243);
+    color: white;
+  }
+  
+
+  tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .button:hover {
+    opacity: 0.8;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+  }
+  .deleteBtn{
+   background-color: red;
+   border: 1px solid red;
+   width: 30px;
+   height: 30px;
+   cursor: pointer;
+ }
+
+ 
