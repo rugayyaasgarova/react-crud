@@ -39,3 +39,43 @@
     margin-right: 50%;
     margin-top: 20px;
 }
+
+
+@media (max-width: 768px) {
+  .product-details {
+    flex-direction: column;
+    padding: 10px;
+    gap: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .product-details img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .product-details h1 {
+    width: 100%;
+    font-size: 1.5rem;
+  }
+
+  .product-details p {
+    width: 100%;
+    font-size: 1rem;
+    margin-top: 15px;
+  }
+
+  .product-details h4 {
+    margin-right: 0;
+    margin-top: 15px;
+    font-size: 1rem;
+  }
+
+  .product-details button {
+    margin: 20px auto 0;
+    display: block;
+    width: 80%;
+    max-width: 200px;
+  }
+}
