@@ -15,7 +15,34 @@ import About from "./pages/Client/About";
 import Favorites from "./pages/Favorites";
 
 function App() {
-  return <>test</>;
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<ClientLayout />}>
+          <Route index element={<Home />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="about" element={<About />} />
+          <Route path="/favorites" element={<Favorites />} />
+
+          <Route path="products">
+            <Route index element={<Products />} />
+            <Route path=":id" element={<ProductDetails />} />
+          </Route>
+        </Route>
+
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="products">
+            <Route index element={<ProductsAdmin />} />
+            <Route path="new" element={<AddProduct />} />
+            <Route path="edit" element={<EditProduct />} />
+          </Route>
+        </Route>
+
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;

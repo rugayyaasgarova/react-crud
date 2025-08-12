@@ -41,6 +41,7 @@ const Products = () => {
   useEffect(() => {
     getData(endpoints.PRODUCTS)
       .then((data) => {
+        console.log("API-dən gələn data:", data);
         setProducts(data);
       })
       .catch((err) => {
@@ -54,7 +55,7 @@ const Products = () => {
 
   if (isLoading) {
     return (
-      <div style={{ fontSize: "3rem", textAlign: "center", marginTop: "10%" }}>
+      <div className="loading">
         <p>LOADING...</p>
       </div>
     );
@@ -96,36 +97,44 @@ const Products = () => {
         </select>
       </div>
       <div className="cards-container">
-        {products.length > 0 &&
-          sortedProducts.map((product) => (
-            <div key={product.id} className="card">
-              <button
-                className="heartIcon"
-                onClick={() => {
-                  toggleFavorites(product);
-                }}
-              >
-                {favs.find((q) => q.id === product.id) ? (
-                  <FaHeart style={{color:"red"}}  />
-                ) : (
-                  <FaRegHeart  style={{color:"red"}}/>
-                )}
-              </button>
-              <img
-                className="ProductImg"
-                src={product.image}
-                alt={product.title}
-              />
+        {sortedProducts.length > 0 ? (
+          sortedProducts.map((product) => {
+            const isFav = favs.some((fav) => fav.id === product.id);
 
-              <Link to={`${product.id}`}>
-                <h3>{product.title}</h3>
-              </Link>
-              <p className="card-description">
-                {product.description.slice(0, 100) + "..."}
-              </p>
-              <p>Price: ${product.price}</p>
-            </div>
-          ))}
+            return (
+              <div key={product.id} className="card">
+                <button
+                  className="heartIcon"
+                  onClick={() => toggleFavorites(product)}
+                >
+                  {isFav ? (
+                    <FaHeart style={{ color: "red" }} />
+                  ) : (
+                    <FaRegHeart style={{ color: "red" }} />
+                  )}
+                </button>
+
+                <img
+                  className="ProductImg"
+                  src={product.image}
+                  alt={product.title}
+                />
+
+                <Link to={`${product.id}`}>
+                  <h3>{product.title}</h3>
+                </Link>
+
+                <p className="card-description">
+                  {product.description.slice(0, 60) + "..."}
+                </p>
+
+                <p>Price: ${product.price}</p>
+              </div>
+            );
+          })
+        ) : (
+          <p>No products found.</p>
+        )}
       </div>
     </div>
   );

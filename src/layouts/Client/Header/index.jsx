@@ -1,17 +1,21 @@
 import { NavLink } from "react-router-dom"
 import "./index.scss"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import { FavoritesContext } from "../../../context/FavoritesContext"
 
 
 const Header = () => {
-  const {favs} = useContext(FavoritesContext)
+  const {favs} = useContext(FavoritesContext);
+  const [menuOpen, setMenuOpen] = useState(false)
   return (
     <header>
       <div className="container">
         <div className="header">
           <h2>React App (Client Side)</h2>
-          <nav>
+          <button className="menu-toggle" onClick={()=> setMenuOpen(!menuOpen)}>
+          ☰
+          </button>
+          <nav className={menuOpen ? "open": ""}>
             <ul>
               <li>
                 <NavLink to={"/"} end>Home</NavLink>
